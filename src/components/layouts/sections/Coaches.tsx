@@ -110,11 +110,10 @@ export default function Coaches() {
 
           <ViewAllButton sx={{mt: {sm: 2, md: 0}}} />
         </Box>
-
-        <Box>
-          <CoachesCarousel CoachesData={CoachesData} />
-        </Box>
       </Container>
+      <Box>
+        <CoachesCarousel CoachesData={CoachesData} />
+      </Box>
     </Box>
   );
 }
