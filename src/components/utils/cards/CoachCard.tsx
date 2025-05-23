@@ -45,7 +45,8 @@ export default function CoachCard({coach}: CoachCardProps) {
             ? "linear-gradient(180deg, #0054F8 0%, #003FBD 100%)"
             : "linear-gradient(180deg, #E0EBFD 0%, #9DBDFE 100%)",
           p: 3,
-          mt: 4,
+          pt: 2,
+          mt: 3,
           height: "500px",
           display: "flex",
           flexDirection: "column",
@@ -54,7 +55,13 @@ export default function CoachCard({coach}: CoachCardProps) {
           boxShadow: 3,
         }}>
         {/* Header with Logo & Social Icons */}
-        <Box sx={{display: "flex", justifyContent: "space-between", mb: 2}}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 3,
+          }}>
           <Box sx={{display: "flex", alignItems: "center"}}>
             <Box>
               <Image
