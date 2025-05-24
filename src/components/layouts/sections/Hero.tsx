@@ -1,10 +1,47 @@
-import {Box, Button, Container, Typography} from "@mui/material";
-
-import Image from "next/image";
-
-import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
+import {Box, Container, Typography} from "@mui/material";
 
 import banner from "@/assets/hero-image.jpg";
+import AnimatedCoachCard from "@/components/utils/cards/AnimatedCoachCard";
+
+const Coaches = [
+  {
+    id: 1,
+    name: "Sir Ton",
+    imageURL: "/SirTon.png",
+    link: "#",
+  },
+  {
+    id: 2,
+    name: "Jessa Jill Turalba",
+    imageURL: "/JessaJillTuralba.png",
+    link: "#",
+  },
+  {
+    id: 3,
+    name: "Coach 3",
+    imageURL: "/Coach3.png",
+    link: "#",
+  },
+  {
+    id: 4,
+    name: "Azela Honor",
+    imageURL: "/AzelaHonor.png",
+    link: "#",
+  },
+  {
+    id: 5,
+    name: "Boyax",
+    imageURL: "/Boyax.png",
+    link: "#",
+  },
+
+  {
+    id: 6,
+    name: "Coach 6",
+    imageURL: "/Coach6.png",
+    link: "#",
+  },
+];
 
 export default function Hero() {
   return (
@@ -76,62 +113,7 @@ export default function Hero() {
             </Typography>
           </Box>
 
-          <Box sx={{py: 20}}>
-            <Box
-              sx={{
-                width: "450px",
-                height: "550px",
-                backgroundColor: "white",
-                borderRadius: "10px",
-                position: "relative",
-              }}>
-              <Box
-                component={"img"}
-                src="/SirTon.png"
-                alt="Sir Ton"
-                draggable={false}
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                }}
-              />
-              <Button
-                variant="contained"
-                sx={{
-                  fontFamily: "Outfit",
-                  textTransform: "none",
-                  fontSize: "22px",
-                  color: "white",
-                  backgroundColor: "#132D4C",
-                  borderRadius: "50px",
-                  display: "inline-flex",
-                  gap: 3,
-                  alignItems: "center",
-                  padding: "5px 20px",
-                  border: "2px solid white",
-                  position: "absolute",
-                  bottom: -30,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                }}>
-                Hire Me{" "}
-                <Image src={Icon} alt="" aria-hidden draggable={false} />
-              </Button>
-              <Box
-                sx={{
-                  width: "450px",
-                  height: "550px",
-                  backgroundColor: "#C5C5C5",
-                  borderRadius: "10px",
-                  zIndex: -1,
-                  position: "absolute",
-                  bottom: -20,
-                  left: 20,
-                }}></Box>
-            </Box>
-          </Box>
+          <AnimatedCoachCard />
         </Box>
       </Container>
     </Box>
