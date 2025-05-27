@@ -85,17 +85,19 @@ export default function AnimatedCoachCard() {
             borderRadius: "10px",
             position: "relative",
             zIndex: 12923,
-            "&::before": {
-              content: '""',
-              width: "450px",
-              height: "550px",
-              backgroundColor: "#C5C5C5",
-              borderRadius: "10px",
-              position: "absolute",
-              zIndex: -121,
-              bottom: -20,
-              left: 20,
-            },
+            // "&::before": {
+            //   content: '""',
+            //   width: "450px",
+            //   height: "550px",
+            //   backgroundColor: "#C5C5C5",
+            //   borderRadius: "10px",
+            //   position: "absolute",
+            //   zIndex: -121,
+            //   bottom: -20,
+            //   left: 20,
+            // },
+            boxShadow: "20px 20px 0 0px #C5C5C5",
+            // overflowY: "hidden"
           }}>
           {/* Coach Image */}
           <Box
@@ -105,7 +107,7 @@ export default function AnimatedCoachCard() {
             draggable={false}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = `https://via.placeholder.com/300x400/4F46E5/white?text=${encodeURIComponent(
+              target.src = `https://dummyimage.com/300x400/eeefff&text=${encodeURIComponent(
                 currentCoach.name
               )}`;
             }}
