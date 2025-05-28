@@ -3,46 +3,6 @@ import {Box, Container, Typography} from "@mui/material";
 import banner from "@/assets/hero-image.jpg";
 import AnimatedCoachCard from "@/components/utils/cards/AnimatedCoachCard";
 
-const Coaches = [
-  {
-    id: 1,
-    name: "Sir Ton",
-    imageURL: "/SirTon.png",
-    link: "#",
-  },
-  {
-    id: 2,
-    name: "Jessa Jill Turalba",
-    imageURL: "/JessaJillTuralba.png",
-    link: "#",
-  },
-  {
-    id: 3,
-    name: "Coach 3",
-    imageURL: "/Coach3.png",
-    link: "#",
-  },
-  {
-    id: 4,
-    name: "Azela Honor",
-    imageURL: "/AzelaHonor.png",
-    link: "#",
-  },
-  {
-    id: 5,
-    name: "Boyax",
-    imageURL: "/Boyax.png",
-    link: "#",
-  },
-
-  {
-    id: 6,
-    name: "Coach 6",
-    imageURL: "/Coach6.png",
-    link: "#",
-  },
-];
-
 export default function Hero() {
   return (
     <Box
