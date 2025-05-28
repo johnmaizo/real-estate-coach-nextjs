@@ -1,7 +1,7 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
-import {Box, Button, Fade} from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Button, Fade } from "@mui/material";
 import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
@@ -74,7 +74,8 @@ export default function AnimatedCoachCard() {
     <Box
       sx={{
         py: 20,
-      }}>
+      }}
+    >
       {/* Main Card */}
       <Fade in={fadeIn} timeout={300}>
         <Box
@@ -96,7 +97,8 @@ export default function AnimatedCoachCard() {
               bottom: -20,
               left: 20,
             },
-          }}>
+          }}
+        >
           {/* Coach Image */}
           <Box
             component="img"
@@ -134,7 +136,8 @@ export default function AnimatedCoachCard() {
               bottom: -30,
               left: "50%",
               transform: "translateX(-50%)",
-            }}>
+            }}
+          >
             Hire Me <Image src={Icon} alt="" aria-hidden draggable={false} />
           </Button>
         </Box>

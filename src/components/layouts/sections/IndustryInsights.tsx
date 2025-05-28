@@ -1,4 +1,4 @@
-import {Box, Container, Typography} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import Image from "next/image";
 
@@ -49,27 +49,30 @@ export default function IndustryInsights() {
         fontFamily: "Outfit",
         pt: 5,
         pb: 10,
-      }}>
+      }}
+    >
       <Container maxWidth="xl">
-        <Box sx={{px: {sm: 0, md: 4}}}>
+        <Box sx={{ px: { sm: 0, md: 4 } }}>
           <Box
             sx={{
-              display: {sm: "block", md: "flex"},
+              display: { sm: "block", md: "flex" },
               justifyContent: "center",
               borderRadius: "15px",
               overflow: "hidden",
-            }}>
+            }}
+          >
             <Box
               sx={{
                 padding: 3,
                 height: "100%",
                 background: `url(${IndustryInsightsBGImage.src}) no-repeat center/cover`,
-                minHeight: {sm: "auto", md: "500px"},
+                minHeight: { sm: "auto", md: "500px" },
                 width: "100%",
                 display: "flex",
                 justifyContent: "start",
                 alignItems: "center",
-              }}>
+              }}
+            >
               <Image
                 src={IndustryInsightsImage}
                 alt=""
@@ -92,8 +95,9 @@ export default function IndustryInsights() {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                maxWidth: {sm: "auto", md: "385px"},
-              }}>
+                maxWidth: { sm: "auto", md: "385px" },
+              }}
+            >
               <Box>
                 <Typography
                   variant="h2"
@@ -101,7 +105,8 @@ export default function IndustryInsights() {
                     fontFamily: "Outfit",
                     fontSize: "30px",
                     fontWeight: 300,
-                  }}>
+                  }}
+                >
                   Industry Insights
                 </Typography>
                 <Typography
@@ -110,7 +115,8 @@ export default function IndustryInsights() {
                     fontSize: "60px",
                     fontWeight: 700,
                     lineHeight: "63px",
-                  }}>
+                  }}
+                >
                   Stay Sharp Stay Ahead
                 </Typography>
                 <Typography
@@ -122,7 +128,8 @@ export default function IndustryInsights() {
                     width: "100%",
                     maxWidth: "330px",
                     mt: 3,
-                  }}>
+                  }}
+                >
                   At RealEstateCoach, we believe knowledge empowers growth. This
                   section brings you curated insights, real-world agent tips,
                   and strategic advice for staying competitive in today’s
@@ -133,7 +140,7 @@ export default function IndustryInsights() {
           </Box>
         </Box>
 
-        <Box sx={{mt: 5}}>
+        <Box sx={{ mt: 5 }}>
           <GridLayout cards={contentCards} />
         </Box>
 
@@ -144,14 +151,15 @@ export default function IndustryInsights() {
             alignItems: "center",
             flexWrap: "wrap",
             mt: 5,
-            mx: {sm: 0, md: 5},
-          }}>
+            mx: { sm: 0, md: 5 },
+          }}
+        >
           <Typography fontFamily={"Outfit"} fontSize={"24px"} color="black">
             We empower you with the insights that keep you at the top of your
             game.
           </Typography>
 
-          <ViewAllButton sx={{mt: {sm: 2, md: 0}}} />
+          <ViewAllButton sx={{ mt: { sm: 2, md: 0 } }} />
         </Box>
       </Container>
     </Box>
