@@ -21,17 +21,18 @@ export default function Hero() {
         },
       }}
     >
-      <Container maxWidth="xl" sx={{ height: "100%" }}>
+      <Container maxWidth="xl" sx={{ height: "100%", overflow: "hidden" }}>
         <Box
           sx={{
             position: "relative",
             zIndex: 1,
             color: "white",
-            display: "flex",
+            display: { sm: "block", md: "flex" },
             alignItems: "start",
             justifyContent: "space-between",
             px: { sm: 0, md: 4 },
             pl: 0,
+            pt: { xs: 5, md: 0 },
           }}
         >
           <Box sx={{ mt: { sm: 0, md: 15 } }}>
@@ -39,20 +40,26 @@ export default function Hero() {
               variant="h1"
               sx={{
                 fontFamily: "Lora",
-                fontSize: "65px",
+                fontSize: { xs: "55px", md: "65px" },
                 fontWeight: 700,
-                lineHeight: "85px",
+                lineHeight: { xs: "65px", md: "85px" },
               }}
             >
               Empowering Real Estate Professionals
             </Typography>
-            <Typography sx={{ fontFamily: "Outfit", fontSize: "27px" }}>
+            <Typography
+              sx={{
+                fontFamily: "Outfit",
+                fontSize: { xs: "20px", md: "27px" },
+                mt: { xs: 3, md: 0 },
+              }}
+            >
               Unlock your potential and transform your real estate career.
             </Typography>
             <Typography
               sx={{
                 fontFamily: "Outfit",
-                fontSize: "22px",
+                fontSize: { xs: "18px", md: "22px" },
                 fontWeight: 300,
                 lineHeight: "35px",
                 my: 5,
@@ -67,10 +74,10 @@ export default function Hero() {
             <Typography
               sx={{
                 fontFamily: "Outfit",
-                fontSize: "22px",
+                fontSize: { xs: "18px", md: "22px" },
                 lineHeight: "35px",
                 fontWeight: 300,
-                pb: 3,
+                pb: { xs: 0, md: 3 },
               }}
             >
               Learn how to build your brand, boost productivity, and master

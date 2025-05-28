@@ -73,13 +73,13 @@ export default function AnimatedCoachCard() {
       {/* Main Card */}
       <Box
         sx={{
-          width: "450px",
+          width: { sm: "auto", md: "450px" },
           height: "550px",
           backgroundColor: "white",
           borderRadius: "10px",
           position: "relative",
           zIndex: 12923,
-          boxShadow: "20px 20px 0 0px #C5C5C5",
+          boxShadow: { sm: "0", md: "20px 20px 0 0px #C5C5C5" },
         }}
       >
         <Fade in={fadeIn} timeout={300}>
@@ -106,9 +106,11 @@ export default function AnimatedCoachCard() {
             <Button
               variant="contained"
               LinkComponent={Link}
-              href={currentCoach.link}
+              // href={currentCoach.link}
+              href={"#"}
               aria-label={`Go to Coach ${currentCoach.name}'s page`}
               sx={{
+                width: { xs: "200px", sm: "auto" },
                 fontFamily: "Outfit",
                 textTransform: "none",
                 fontSize: "22px",
