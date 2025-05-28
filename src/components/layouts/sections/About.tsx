@@ -20,34 +20,38 @@ const sections = [
     description:
       "Proven tactics that get straight to the point so you can take action and see results fast.",
     icon: <ThumbUpAltOutlinedIcon style={{ fontSize: 70, color: "white" }} />,
-    image: "coach2.jpg",
+    image: "/coach2.jpg",
   },
   {
     title: "Supportive community of like-minded professionals",
     description:
       "Connect, collaborate, and grow with others who share your drive and passion for real estate success.",
     icon: <GroupsOutlinedIcon style={{ fontSize: 70, color: "white" }} />,
-    image: "coach3.jpg",
+    image: "/coach3.jpg",
   },
   {
     title: "Systems for long-term success and confidence in your craft",
     description:
       "Build lasting success with proven systems that boost efficiency and confidence in your real estate business.",
     icon: <VerifiedUserOutlinedIcon style={{ fontSize: 70, color: "white" }} />,
-    image: "coach4.jpg",
+    image: "/coach4.jpg",
   },
   {
     title: "You don’t need more time just a better system. We’re here to help.",
     description:
       "Work smarter, not longer. We’ll help you streamline, focus, and succeed.",
     icon: <RestoreOutlinedIcon style={{ fontSize: 70, color: "white" }} />,
-    image: "coach5.jpg",
+    image: "/coach5.jpg",
   },
 ];
 
 export default function HomePage() {
   return (
-    <Box style={{ maxWidth: 1160, margin: "auto", padding: "100px 20px" }}>
+    <Box
+      component={"section"}
+      id="about"
+      style={{ maxWidth: 1160, margin: "auto", padding: "100px 20px" }}
+    >
       <Typography
         variant="h2"
         align="center"
@@ -97,12 +101,12 @@ export default function HomePage() {
             }}
           >
             <Box style={{ flex: "0 0 200px" }}>
-              <Image
+              <img
                 src={section.image}
                 alt={section.title}
-                width={560}
-                height={400}
                 style={{
+                  width: 560,
+                  height: 400,
                   objectFit: "cover",
                   borderRadius: borderRadius,
                   border: border,
@@ -146,11 +150,7 @@ export default function HomePage() {
               </Box>
               <Typography
                 variant="body2"
-                sx={{
-                  fontSize: "20px",
-                  color: "#696969",
-                  fontFamily: "Outfit",
-                }}
+                sx={{ fontSize: "20px", color: "#696969" }}
               >
                 {section.description}
               </Typography>

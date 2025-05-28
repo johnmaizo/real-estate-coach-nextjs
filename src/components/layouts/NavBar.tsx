@@ -28,6 +28,8 @@ import PeopleIcon from "@mui/icons-material/People";
 import Image from "next/image";
 import Logo from "../../assets/RealEstateCoachLogo.png";
 
+import Link from "next/link";
+
 interface NavBarProps {
   window?: () => Window;
 }
@@ -56,7 +58,7 @@ export default function NavBar({window}: NavBarProps) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign: "center"}}>
-      <Typography variant="h6" component="a" href="/" sx={{my: 2}}>
+      <Typography variant="h6" component={Link} href="/" sx={{my: 2}}>
         <Image src={Logo} width={269.51} height={99} alt="Logo" />
       </Typography>
       <Divider />
@@ -92,7 +94,7 @@ export default function NavBar({window}: NavBarProps) {
             flexDirection: isMobile ? "row-reverse" : "row",
             justifyContent: "space-between",
           }}>
-          <Typography variant="h6" component="a" href="/" sx={{my: 2}}>
+          <Typography variant="h6" component={Link} href="/" sx={{my: 2}}>
             <Image src={Logo} width={160} height={59.5} alt="Logo" />
           </Typography>
           <IconButton
