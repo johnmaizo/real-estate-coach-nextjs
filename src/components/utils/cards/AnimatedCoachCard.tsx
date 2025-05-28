@@ -6,6 +6,7 @@ import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
 import Link from "next/link";
+import {useAppProvider} from "@/providers/AppProvider";
 
 interface Coach {
   id: number;
@@ -57,6 +58,8 @@ export default function AnimatedCoachCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
+  const {desktop} = useAppProvider();
+
   useEffect(() => {
     const interval = setInterval(() => {
       setFadeIn(false);
@@ -80,13 +83,13 @@ export default function AnimatedCoachCard() {
       {/* Main Card */}
       <Box
         sx={{
-          width: "450px",
+          width: {sm: "auto", md: "450px"},
           height: "550px",
           backgroundColor: "white",
           borderRadius: "10px",
           position: "relative",
           zIndex: 12923,
-          boxShadow: "20px 20px 0 0px #C5C5C5",
+          boxShadow: {sm: "0", md: "20px 20px 0 0px #C5C5C5"},
         }}>
         <Fade in={fadeIn} timeout={300}>
           <Box>

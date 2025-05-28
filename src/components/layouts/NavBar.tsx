@@ -58,8 +58,12 @@ export default function NavBar({window}: NavBarProps) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign: "center"}}>
-      <Typography variant="h6" component={Link} href="/" sx={{my: 2}}>
-        <Image src={Logo} width={269.51} height={99} alt="Logo" />
+      <Typography
+        variant="h6"
+        component={Link}
+        href="/"
+        sx={{my: 2, display: "inline-block"}}>
+        <Image src={Logo} width={160.51} height={59} alt="Logo" />
       </Typography>
       <Divider />
       <List>
@@ -69,7 +73,7 @@ export default function NavBar({window}: NavBarProps) {
               component="a"
               href={href}
               sx={{textAlign: "center"}}>
-              <ListItemIcon sx={{minWidth: 40, color: "#EE3434"}}>
+              <ListItemIcon sx={{minWidth: 40, color: "#132D4C"}}>
                 {icon}
               </ListItemIcon>
               <ListItemText primary={name} sx={{textAlign: "start"}} />
