@@ -6,7 +6,6 @@ import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
 import Link from "next/link";
-import {useAppProvider} from "@/providers/AppProvider";
 
 interface Coach {
   id: number;
@@ -57,8 +56,6 @@ const Coaches: Coach[] = [
 export default function AnimatedCoachCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
-
-  const {desktop} = useAppProvider();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -115,9 +112,11 @@ export default function AnimatedCoachCard() {
             <Button
               variant="contained"
               LinkComponent={Link}
-              href={currentCoach.link}
+              // href={currentCoach.link}
+              href={"#"}
               aria-label={`Go to Coach ${currentCoach.name}'s page`}
               sx={{
+                width: {xs: "200px", sm: "auto"},
                 fontFamily: "Outfit",
                 textTransform: "none",
                 fontSize: "22px",

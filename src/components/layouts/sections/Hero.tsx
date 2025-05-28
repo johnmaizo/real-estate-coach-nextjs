@@ -20,7 +20,7 @@ export default function Hero() {
           backgroundColor: "rgba(38, 84, 165,0.9)",
         },
       }}>
-      <Container maxWidth="xl" sx={{height: "100%"}}>
+      <Container maxWidth="xl" sx={{height: "100%", overflow: "hidden"}}>
         <Box
           sx={{
             position: "relative",
