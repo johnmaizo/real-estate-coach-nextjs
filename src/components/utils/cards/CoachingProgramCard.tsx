@@ -1,7 +1,7 @@
 "use client";
 
-import {useAppProvider} from "@/providers/AppProvider";
-import {Box, Typography} from "@mui/material";
+import { useAppProvider } from "@/providers/AppProvider";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 interface CoachingProgramCardProps {
@@ -17,7 +17,7 @@ export default function CoachingProgramCard({
   program,
   index,
 }: CoachingProgramCardProps) {
-  const {desktop} = useAppProvider();
+  const { desktop } = useAppProvider();
 
   return (
     <Box
@@ -30,7 +30,8 @@ export default function CoachingProgramCard({
           (desktop && index >= 3 && index < 5)
             ? "2px solid #C4C2C0"
             : undefined,
-      }}>
+      }}
+    >
       <Image
         src={program.image}
         alt=""
@@ -42,10 +43,11 @@ export default function CoachingProgramCard({
       <Typography
         variant="h5"
         component={"h5"}
-        sx={{fontWeight: 700, mt: 2, fontSize: "32px"}}>
+        sx={{ fontWeight: 700, mt: 2, fontSize: "32px" }}
+      >
         {program.title}
       </Typography>
-      <Typography sx={{mt: 1, fontSize: "16px", color: "#696969"}}>
+      <Typography sx={{ mt: 1, fontSize: "16px", color: "#696969" }}>
         {program.description}
       </Typography>
     </Box>

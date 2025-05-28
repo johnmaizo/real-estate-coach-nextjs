@@ -23,18 +23,19 @@ interface GridLayoutProps {
   cards: ContentCard[];
 }
 
-export default function GridLayout({cards}: GridLayoutProps) {
+export default function GridLayout({ cards }: GridLayoutProps) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box sx={{px: {sm: 0, md: 5}}}>
+    <Box sx={{ px: { sm: 0, md: 5 } }}>
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : "0.5fr 1fr",
           gap: 3,
-        }}>
+        }}
+      >
         {/* First large card - left column */}
         {cards[0] && (
           <Card
@@ -48,11 +49,12 @@ export default function GridLayout({cards}: GridLayoutProps) {
               boxShadow: 0,
               cursor: "pointer",
               transition: "0.3s",
-              border: "2px solid #C7C4C4",
+              border: "1px solid #C7C4C4",
               "&:hover": {
                 transform: "translateY(-3px)",
               },
-            }}>
+            }}
+          >
             <CardMedia
               component="img"
               sx={{
@@ -72,14 +74,16 @@ export default function GridLayout({cards}: GridLayoutProps) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 pt: 2,
-              }}>
+              }}
+            >
               <Box>
                 <Typography
                   variant="h6"
                   component="h2"
                   fontFamily={"Inter"}
                   fontSize={"25px"}
-                  gutterBottom>
+                  gutterBottom
+                >
                   {cards[0].title}
                 </Typography>
                 <Typography
@@ -87,7 +91,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
                   fontFamily={"Inter"}
                   fontSize={"18px"}
                   lineHeight={"25px"}
-                  color="#696969">
+                  color="#696969"
+                >
                   {cards[0].description}
                 </Typography>
               </Box>
@@ -99,10 +104,11 @@ export default function GridLayout({cards}: GridLayoutProps) {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: {sm: "1fr", md: "1fr 1fr"},
+            gridTemplateColumns: { sm: "1fr", md: "1fr 1fr" },
             gap: 2,
             height: "100%",
-          }}>
+          }}
+        >
           {/* Top card - spans full width */}
           {cards[1] && (
             <Card
@@ -111,15 +117,16 @@ export default function GridLayout({cards}: GridLayoutProps) {
                 padding: 2,
                 borderRadius: "25px",
                 backgroundColor: "#F4F4F4",
-                display: {sm: "block", md: "flex"},
+                display: { sm: "block", md: "flex" },
                 boxShadow: 0,
                 cursor: "pointer",
                 transition: "0.3s",
-                border: "2px solid #C7C4C4",
+                border: "1px solid #C7C4C4",
                 "&:hover": {
                   transform: "translateY(-3px)",
                 },
-              }}>
+              }}
+            >
               <CardMedia
                 component="img"
                 sx={{
@@ -134,16 +141,18 @@ export default function GridLayout({cards}: GridLayoutProps) {
               />
               <CardContent
                 sx={{
-                  "&:last-child": {pb: isMobile ? 2 : 1},
+                  "&:last-child": { pb: isMobile ? 2 : 1 },
                   width: "100%",
-                  maxWidth: {sm: "100%", md: "400px"},
-                }}>
+                  maxWidth: { sm: "100%", md: "400px" },
+                }}
+              >
                 <Typography
                   variant="h6"
                   component="h2"
                   fontFamily={"Inter"}
                   fontSize={"25px"}
-                  gutterBottom>
+                  gutterBottom
+                >
                   {cards[1].title}
                 </Typography>
                 <Typography
@@ -151,7 +160,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
                   fontFamily={"Inter"}
                   fontSize={"18px"}
                   lineHeight={"25px"}
-                  color="#696969">
+                  color="#696969"
+                >
                   {cards[1].description}
                 </Typography>
               </CardContent>
@@ -171,11 +181,12 @@ export default function GridLayout({cards}: GridLayoutProps) {
                 boxShadow: 0,
                 cursor: "pointer",
                 transition: "0.3s",
-                border: "2px solid #C7C4C4",
+                border: "1px solid #C7C4C4",
                 "&:hover": {
                   transform: "translateY(-3px)",
                 },
-              }}>
+              }}
+            >
               <CardMedia
                 component="img"
                 sx={{
@@ -196,8 +207,9 @@ export default function GridLayout({cards}: GridLayoutProps) {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   p: 1,
-                  "&:last-child": {pb: 1},
-                }}>
+                  "&:last-child": { pb: 1 },
+                }}
+              >
                 <Box>
                   <Typography
                     variant="h6"
@@ -210,7 +222,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
                       WebkitLineClamp: 2,
                       WebkitBoxOrient: "vertical",
                       overflow: "hidden",
-                    }}>
+                    }}
+                  >
                     {card.title}
                   </Typography>
                   <Typography
@@ -224,7 +237,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
                       WebkitLineClamp: 3,
                       WebkitBoxOrient: "vertical",
                       overflow: "hidden",
-                    }}>
+                    }}
+                  >
                     {card.description}
                   </Typography>
                 </Box>
@@ -244,7 +258,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
               : "repeat(auto-fit, minmax(300px, 1fr))",
             gap: 3,
             mt: 4,
-          }}>
+          }}
+        >
           {cards.slice(4).map((card) => (
             <Card
               key={card.id}
@@ -258,11 +273,12 @@ export default function GridLayout({cards}: GridLayoutProps) {
                 boxShadow: 0,
                 cursor: "pointer",
                 transition: "0.3s",
-                border: "2px solid #C7C4C4",
+                border: "1px solid #C7C4C4",
                 "&:hover": {
                   transform: "translateY(-3px)",
                 },
-              }}>
+              }}
+            >
               <CardMedia
                 component="img"
                 sx={{
@@ -283,14 +299,16 @@ export default function GridLayout({cards}: GridLayoutProps) {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                }}>
+                }}
+              >
                 <Box>
                   <Typography
                     variant="h6"
                     component="h2"
                     fontFamily={"Inter"}
                     fontSize={"25px"}
-                    gutterBottom>
+                    gutterBottom
+                  >
                     {card.title}
                   </Typography>
                   <Typography
@@ -298,7 +316,8 @@ export default function GridLayout({cards}: GridLayoutProps) {
                     fontFamily={"Inter"}
                     fontSize={"18px"}
                     lineHeight={"25px"}
-                    color="#696969">
+                    color="#696969"
+                  >
                     {card.description}
                   </Typography>
                 </Box>

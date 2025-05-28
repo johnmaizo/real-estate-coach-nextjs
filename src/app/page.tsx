@@ -1,5 +1,5 @@
 import Hero from "@/components/layouts/sections/Hero";
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 import "./globals.css";
 
 import "@fontsource/outfit";
@@ -14,6 +14,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 
+import About from "@/components/layouts/sections/About";
 import CoachingPrograms from "@/components/layouts/sections/CoachingPrograms";
 import IndustryInsights from "@/components/layouts/sections/IndustryInsights";
 import Coaches from "@/components/layouts/sections/Coaches";
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <Box>
       <Hero />
+      <About />
       <CoachingPrograms />
       <Coaches />
       <IndustryInsights />
