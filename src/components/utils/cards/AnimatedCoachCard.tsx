@@ -107,7 +107,7 @@ export default function AnimatedCoachCard() {
             draggable={false}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = `https://via.placeholder.com/300x400/4F46E5/white?text=${encodeURIComponent(
+              target.src = `https://dummyimage.com/300x400/eeefff&text=${encodeURIComponent(
                 currentCoach.name
               )}`;
             }}
