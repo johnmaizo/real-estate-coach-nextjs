@@ -2,9 +2,7 @@ import type {Metadata} from "next";
 import {Geist} from "next/font/google";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v15-appRouter";
 import {AppProvider} from "@/providers/AppProvider";
-import NavBar from "@/components/layouts/NavBar";
-import {Box} from "@mui/system";
-import Footer from "@/components/layouts/Footer";
+import LayoutContent from "@/components/utils/content/LayoutContent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +25,7 @@ export default function RootLayout({
       <AppRouterCacheProvider>
         <body className={`${geistSans.variable}`}>
           <AppProvider>
-            <NavBar />
-            <Box component={"main"}>{children}</Box>
-            <Footer />
+            <LayoutContent>{children}</LayoutContent>
           </AppProvider>
         </body>
       </AppRouterCacheProvider>

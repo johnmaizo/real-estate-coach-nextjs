@@ -71,7 +71,7 @@ export default function Footer() {
               }}>
               <Box>
                 <Typography
-                  component={"a"}
+                  component={Link}
                   href="/"
                   sx={{display: "inline-block"}}>
                   <Image src={RealEstateCoachLogoBW} alt="logo" width={200} />

@@ -5,6 +5,8 @@ import {Box, Button, Fade} from "@mui/material";
 import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
+import Link from "next/link";
+
 interface Coach {
   id: number;
   name: string;
@@ -12,42 +14,42 @@ interface Coach {
   link: string;
 }
 
-const Coaches = [
+const Coaches: Coach[] = [
   {
     id: 1,
     name: "Sir Ton",
     imageURL: "/SirTon.png",
-    link: "#",
+    link: "/coach/sir-ton",
   },
   {
     id: 2,
     name: "Jessa Jill Turalba",
     imageURL: "/JessaJillTuralba.png",
-    link: "#",
+    link: "/coach/jessa-jill-turalba",
   },
   {
     id: 3,
     name: "Coach 3",
     imageURL: "/Coach3.png",
-    link: "#",
+    link: "/coach/coach-3",
   },
   {
     id: 4,
     name: "Azela Honor",
     imageURL: "/AzelaHonor.png",
-    link: "#",
+    link: "/coach/azela-honor",
   },
   {
     id: 5,
     name: "Boyax",
     imageURL: "/Boyax.png",
-    link: "#",
+    link: "/coach/boyax",
   },
   {
     id: 6,
     name: "Coach 6",
     imageURL: "/Coach6.png",
-    link: "#",
+    link: "/coach/coach-6",
   },
 ];
 
@@ -76,71 +78,65 @@ export default function AnimatedCoachCard() {
         py: 20,
       }}>
       {/* Main Card */}
-      <Fade in={fadeIn} timeout={300}>
-        <Box
-          sx={{
-            width: "450px",
-            height: "550px",
-            backgroundColor: "white",
-            borderRadius: "10px",
-            position: "relative",
-            zIndex: 12923,
-            // "&::before": {
-            //   content: '""',
-            //   width: "450px",
-            //   height: "550px",
-            //   backgroundColor: "#C5C5C5",
-            //   borderRadius: "10px",
-            //   position: "absolute",
-            //   zIndex: -121,
-            //   bottom: -20,
-            //   left: 20,
-            // },
-            boxShadow: "20px 20px 0 0px #C5C5C5",
-            // overflowY: "hidden"
-          }}>
-          {/* Coach Image */}
-          <Box
-            component="img"
-            src={currentCoach.imageURL}
-            alt={currentCoach.name}
-            draggable={false}
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = `https://dummyimage.com/300x400/eeefff&text=${encodeURIComponent(
-                currentCoach.name
-              )}`;
-            }}
-            sx={{
-              position: "absolute",
-              bottom: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              fontFamily: "Outfit",
-              textTransform: "none",
-              fontSize: "22px",
-              color: "white",
-              backgroundColor: "#132D4C",
-              borderRadius: "50px",
-              display: "inline-flex",
-              gap: 3,
-              alignItems: "center",
-              padding: "5px 20px",
-              border: "2px solid white",
-              position: "absolute",
-              bottom: -30,
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}>
-            Hire Me <Image src={Icon} alt="" aria-hidden draggable={false} />
-          </Button>
-        </Box>
-      </Fade>
+      <Box
+        sx={{
+          width: "450px",
+          height: "550px",
+          backgroundColor: "white",
+          borderRadius: "10px",
+          position: "relative",
+          zIndex: 12923,
+          boxShadow: "20px 20px 0 0px #C5C5C5",
+        }}>
+        <Fade in={fadeIn} timeout={300}>
+          <Box>
+            {/* Coach Image */}
+
+            <Box
+              component="img"
+              src={currentCoach.imageURL}
+              alt={currentCoach.name}
+              draggable={false}
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = `https://dummyimage.com/300x400/eeefff&text=${encodeURIComponent(
+                  currentCoach.name
+                )}`;
+              }}
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+            />
+            <Button
+              LinkComponent={Link}
+              href={currentCoach.link}
+              aria-label={`Go to ${currentCoach.name}'s profile`}
+              variant="contained"
+              sx={{
+                fontFamily: "Outfit",
+                textTransform: "none",
+                fontSize: "22px",
+                color: "white",
+                backgroundColor: "#132D4C",
+                borderRadius: "50px",
+                display: "inline-flex",
+                gap: 3,
+                alignItems: "center",
+                padding: "5px 20px",
+                border: "2px solid white",
+                position: "absolute",
+                bottom: -30,
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}>
+              Hire Me <Image src={Icon} alt="" aria-hidden draggable={false} />
+            </Button>
+          </Box>
+        </Fade>
+      </Box>
     </Box>
   );
 }
