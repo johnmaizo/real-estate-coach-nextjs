@@ -5,6 +5,7 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import RestoreOutlinedIcon from "@mui/icons-material/RestoreOutlined";
+import Image from "next/image";
 
 const sections = [
   {
@@ -96,12 +97,12 @@ export default function HomePage() {
             }}
           >
             <Box style={{ flex: "0 0 200px" }}>
-              <img
+              <Image
                 src={section.image}
                 alt={section.title}
+                width={560}
+                height={400}
                 style={{
-                  width: 560,
-                  height: 400,
                   objectFit: "cover",
                   borderRadius: borderRadius,
                   border: border,
@@ -135,7 +136,7 @@ export default function HomePage() {
                 <Typography
                   sx={{
                     fontFamily: "Outfit",
-                    fontWeight: "900",
+                    fontWeight: "700",
                     fontSize: "35px",
                     lineHeight: "40px",
                   }}
@@ -145,7 +146,11 @@ export default function HomePage() {
               </Box>
               <Typography
                 variant="body2"
-                sx={{ fontSize: "20px", color: "#696969" }}
+                sx={{
+                  fontSize: "20px",
+                  color: "#696969",
+                  fontFamily: "Outfit",
+                }}
               >
                 {section.description}
               </Typography>

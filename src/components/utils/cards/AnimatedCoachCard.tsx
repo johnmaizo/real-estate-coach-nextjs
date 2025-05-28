@@ -5,13 +5,6 @@ import { Box, Button, Fade } from "@mui/material";
 import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
-interface Coach {
-  id: number;
-  name: string;
-  imageURL: string;
-  link: string;
-}
-
 const Coaches = [
   {
     id: 1,
