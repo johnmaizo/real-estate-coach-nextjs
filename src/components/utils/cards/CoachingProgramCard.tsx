@@ -24,11 +24,11 @@ export default function CoachingProgramCard({
       sx={{
         padding: 3,
         borderBottom:
-          desktop && index >= 0 && index < 3 ? "2px solid #C4C2C0" : undefined,
+          desktop && index >= 0 && index < 3 ? "1px solid #C4BEBE" : undefined,
         borderRight:
           (desktop && index >= 0 && index < 2) ||
           (desktop && index >= 3 && index < 5)
-            ? "2px solid #C4C2C0"
+            ? "1px solid #C4BEBE"
             : undefined,
       }}
     >

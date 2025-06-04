@@ -9,39 +9,51 @@ import Link from "next/link";
 const Coaches = [
   {
     id: 1,
-    name: "Sir Ton",
+    name: "Anthony Leuterio",
     imageURL: "/SirTon.png",
-    link: "/coach/sir-ton",
+    link: "/coach/Anthony_Leuterio",
   },
   {
     id: 2,
-    name: "Jessa Jill Turalba",
-    imageURL: "/JessaJillTuralba.png",
-    link: "/coach/jessa-jill-turalba",
+    name: "Gilbert Monecillo ",
+    imageURL: "/Gilbert_Monecillo.png",
+    link: "/coach/Gilbert_Monecillo",
   },
   {
     id: 3,
-    name: "Coach 3",
-    imageURL: "/Coach3.png",
-    link: "/coach/coach-3",
+    name: "Azela Honor",
+    imageURL: "/Azela_Honor.png",
+    link: "/coach/Azela_Honor",
   },
   {
     id: 4,
-    name: "Azela Honor",
-    imageURL: "/AzelaHonor.png",
-    link: "/coach/azela-honor",
+    name: "George Ryan",
+    imageURL: "/George_Ryan.png",
+    link: "/coach/George_Ryan",
   },
   {
     id: 5,
-    name: "Boyax",
-    imageURL: "/Boyax.png",
-    link: "/coach/boyax",
+    name: "Marita Gracia Bombeo Fancubit",
+    imageURL: "/Marita_Gracia.png",
+    link: "/coach/Marita_Gracia",
   },
   {
     id: 6,
-    name: "Coach 6",
-    imageURL: "/Coach6.png",
-    link: "/coach/coach-6",
+    name: "Chris Malazarte ",
+    imageURL: "/Chris_Malazarte.png",
+    link: "/coach/Chris_Malazarte",
+  },
+  {
+    id: 7,
+    name: "Angie Kay Godornes",
+    imageURL: "/Angie_Kay_Godornes.png",
+    link: "/coach/Angie_Kay_Godornes",
+  },
+  {
+    id: 8,
+    name: "Ada Mae Roiles ",
+    imageURL: "/Ada_Mae_Roiles.png",
+    link: "/coach/Ada_Mae_Roiles",
   },
 ];
 
@@ -100,14 +112,14 @@ export default function AnimatedCoachCard() {
                 position: "absolute",
                 bottom: 0,
                 left: "50%",
+                height: "680px",
                 transform: "translateX(-50%)",
               }}
             />
             <Button
               variant="contained"
               LinkComponent={Link}
-              // href={currentCoach.link}
-              href={"#"}
+              href={currentCoach.link}
               aria-label={`Go to Coach ${currentCoach.name}'s page`}
               sx={{
                 width: { xs: "200px", sm: "auto" },
@@ -120,12 +132,17 @@ export default function AnimatedCoachCard() {
                 display: "inline-flex",
                 gap: 3,
                 alignItems: "center",
-                padding: "5px 20px",
+                padding: "5px 10px 5px 20px",
                 border: "2px solid white",
                 position: "absolute",
                 bottom: -30,
                 left: "50%",
                 transform: "translateX(-50%)",
+                "&:hover": {
+                  background: "white",
+                  color: "#132D4C",
+                  borderColor: "#132D4C",
+                },
               }}
             >
               Hire Me <Image src={Icon} alt="" aria-hidden draggable={false} />

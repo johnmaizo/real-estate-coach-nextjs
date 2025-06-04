@@ -1,8 +1,8 @@
 import React from "react";
 
-import {Box, Card, CardContent, Typography, IconButton} from "@mui/material";
+import { Box, Card, CardContent, Typography, IconButton } from "@mui/material";
 
-import {Instagram, Facebook, LinkedIn, WhatsApp} from "@mui/icons-material";
+import { Instagram, Facebook, LinkedIn, WhatsApp } from "@mui/icons-material";
 import Image from "next/image";
 
 import FilipinoHomesLogo from "@/assets/svg/FilipinoHomesLogoSmall.svg";
@@ -13,7 +13,7 @@ interface CoachCardProps {
     id: number;
     name: string;
     description: string;
-    socialMedias: {name: string; link: string}[];
+    socialMedias: { name: string; link: string }[];
     imageUrl: string;
   };
 }
@@ -33,11 +33,11 @@ function getSocialIcon(name: string) {
   }
 }
 
-export default function CoachCard({coach}: CoachCardProps) {
+export default function CoachCard({ coach }: CoachCardProps) {
   const isSpecialCard = coach.id % 2 === 0;
 
   return (
-    <Box sx={{px: 1, height: "100%"}}>
+    <Box sx={{ px: 1, height: "100%" }}>
       <Card
         sx={{
           borderRadius: "20px",
@@ -53,7 +53,8 @@ export default function CoachCard({coach}: CoachCardProps) {
           position: "relative",
           overflow: "visible",
           boxShadow: 3,
-        }}>
+        }}
+      >
         {/* Header with Logo & Social Icons */}
         <Box
           sx={{
@@ -61,8 +62,9 @@ export default function CoachCard({coach}: CoachCardProps) {
             justifyContent: "space-between",
             alignItems: "center",
             mb: 3,
-          }}>
-          <Box sx={{display: "flex", alignItems: "center"}}>
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box>
               <Image
                 src={isSpecialCard ? FilipinoHomesLogoWhite : FilipinoHomesLogo}
@@ -80,7 +82,7 @@ export default function CoachCard({coach}: CoachCardProps) {
             </Box>
           </Box>
 
-          <Box sx={{display: "flex", gap: 0.5}}>
+          <Box sx={{ display: "flex", gap: 0.5 }}>
             {coach.socialMedias.map((social, idx) => (
               <IconButton
                 key={idx}
@@ -98,7 +100,8 @@ export default function CoachCard({coach}: CoachCardProps) {
                     transform: "scale(1.1)",
                   },
                   transition: "all 0.2s ease-in-out",
-                }}>
+                }}
+              >
                 {getSocialIcon(social.name)}
               </IconButton>
             ))}
@@ -107,7 +110,8 @@ export default function CoachCard({coach}: CoachCardProps) {
 
         {/* Coach Info */}
         <CardContent
-          sx={{p: 0, flex: 1, display: "flex", flexDirection: "column"}}>
+          sx={{ p: 0, flex: 1, display: "flex", flexDirection: "column" }}
+        >
           <Typography
             variant="h5"
             component="h3"
@@ -117,7 +121,8 @@ export default function CoachCard({coach}: CoachCardProps) {
               color: isSpecialCard ? "white" : "text.primary",
               fontSize: "22px",
               lineHeight: 1.2,
-            }}>
+            }}
+          >
             {coach.name}
           </Typography>
           <Typography
@@ -127,7 +132,8 @@ export default function CoachCard({coach}: CoachCardProps) {
               mb: 3,
               fontWeight: 300,
               fontSize: "16px",
-            }}>
+            }}
+          >
             {coach.description}
           </Typography>
 
@@ -138,7 +144,8 @@ export default function CoachCard({coach}: CoachCardProps) {
               display: "flex",
               justifyContent: "center",
               alignItems: "flex-end",
-            }}>
+            }}
+          >
             <Box
               component="img"
               src={coach.imageUrl}
@@ -153,7 +160,7 @@ export default function CoachCard({coach}: CoachCardProps) {
               draggable={false}
               style={{
                 width: "100%",
-                maxWidth: coach.name === "Boyax" ? "300px" : "240px",
+                maxWidth: coach.name === "Boyax" ? "300px" : "350px",
               }}
             />
           </Box>

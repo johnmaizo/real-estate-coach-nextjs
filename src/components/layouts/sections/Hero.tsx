@@ -12,6 +12,7 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
+        marginTop: "100px",
         "&:before": {
           content: '""',
           position: "absolute",
@@ -63,6 +64,7 @@ export default function Hero() {
                 fontWeight: 300,
                 lineHeight: "35px",
                 my: 5,
+                padding: { xs: 0, md: "0 50px 0 0" },
               }}
             >
               At RealEstateCoach, we believe every agent has the power to thrive

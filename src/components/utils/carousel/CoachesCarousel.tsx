@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Carousel, {ResponsiveType} from "react-multi-carousel";
+import Carousel, { ResponsiveType } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 import CoachCard from "../cards/CoachCard";
 
 interface SocialMedia {
@@ -21,39 +21,40 @@ interface Coach {
 
 const responsive: ResponsiveType = {
   desktop: {
-    breakpoint: {max: 3000, min: 1024},
+    breakpoint: { max: 3000, min: 1024 },
     items: 3,
     slidesToSlide: 1,
   },
   tablet: {
-    breakpoint: {max: 1024, min: 464},
+    breakpoint: { max: 1024, min: 464 },
     items: 2,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: {max: 464, min: 0},
+    breakpoint: { max: 464, min: 0 },
     items: 1,
     slidesToSlide: 1,
   },
 };
 
-const CoachesCarousel = ({CoachesData}: {CoachesData: Coach[]}) => (
-  <Box sx={{width: "100%"}}>
+const CoachesCarousel = ({ CoachesData }: { CoachesData: Coach[] }) => (
+  <Box sx={{ width: "100%" }}>
     <Carousel
       responsive={responsive}
       infinite
-      autoPlay={false}
+      autoPlay={true}
+      autoPlaySpeed={4000}
       keyBoardControl
       customTransition="all .5s"
       transitionDuration={500}
       containerClass="carousel-container"
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
-      showDots
       arrows
       swipeable
       draggable
-      ssr={false}>
+      ssr={false}
+    >
       {CoachesData.map((coach) => (
         <CoachCard key={coach.id} coach={coach} />
       ))}

@@ -1,6 +1,6 @@
-import type {Metadata} from "next";
-import {AppProvider} from "@/providers/AppProvider";
-import {Box} from "@mui/system";
+import type { Metadata } from "next";
+import { AppProvider } from "@/providers/AppProvider";
+import { Box } from "@mui/system";
 
 export const metadata: Metadata = {
   title: "Real EstateCoach",

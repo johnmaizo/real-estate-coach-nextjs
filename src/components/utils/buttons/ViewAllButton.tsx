@@ -1,14 +1,14 @@
-import {Button, ButtonProps} from "@mui/material";
+import { Button, ButtonProps } from "@mui/material";
 import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 
-import {SxProps, Theme} from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 
 interface ViewAllButtonProps extends ButtonProps {
   sx?: SxProps<Theme>;
 }
 
-export default function ViewAllButton({sx, ...props}: ViewAllButtonProps) {
+export default function ViewAllButton({ sx, ...props }: ViewAllButtonProps) {
   return (
     <Button
       variant="contained"
@@ -22,10 +22,11 @@ export default function ViewAllButton({sx, ...props}: ViewAllButtonProps) {
         display: "inline-flex",
         gap: 3,
         alignItems: "center",
-        padding: "5px 20px",
+        padding: "5px 10px 5px 20px",
         ...sx,
       }}
-      {...props}>
+      {...props}
+    >
       View All <Image src={Icon} alt="" aria-hidden draggable={false} />
     </Button>
   );

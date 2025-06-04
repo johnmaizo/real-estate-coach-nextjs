@@ -18,6 +18,7 @@ import About from "@/components/layouts/sections/About";
 import CoachingPrograms from "@/components/layouts/sections/CoachingPrograms";
 import IndustryInsights from "@/components/layouts/sections/IndustryInsights";
 import Coaches from "@/components/layouts/sections/Coaches";
+import BackToTopButton from "@/components/utils/BackToTopButton";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <CoachingPrograms />
       <Coaches />
       <IndustryInsights />
+      <BackToTopButton />
     </Box>
   );
 }
