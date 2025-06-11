@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Box,
@@ -25,8 +25,6 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import SellIcon from "@mui/icons-material/Sell";
 import DomainAddIcon from "@mui/icons-material/DomainAdd";
 import PeopleIcon from "@mui/icons-material/People";
-import Image from "next/image";
-import Logo from "../../assets/RealEstateCoachLogo.png";
 
 import Link from "next/link";
 
@@ -56,15 +54,27 @@ export default function NavBar({ window }: NavBarProps) {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+      }}
+    >
       <Typography
         variant="h6"
         component={Link}
         href="/"
         sx={{ my: 2, display: "inline-block" }}
       >
-        <Image src={Logo} width={160.51} height={59} alt="Logo" />
+        realestatecoach.ph
       </Typography>
       <Divider />
       <List>
@@ -95,10 +105,10 @@ export default function NavBar({ window }: NavBarProps) {
         component="nav"
         position="static"
         sx={{
-          bgcolor: "white",
-          boxShadow: 1,
-          py: 0,
-          position: "fixed",
+          bgcolor: "transparent",
+          boxShadow: 0,
+          py: 2,
+          position: "absolute",
           top: "0",
           zIndex: "1000",
         }}
@@ -109,15 +119,28 @@ export default function NavBar({ window }: NavBarProps) {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h6" component={Link} href="/" sx={{ my: 2 }}>
-            <Image src={Logo} width={160} height={59.5} alt="Logo" />
+          <Typography
+            variant="h6"
+            component={Link}
+            href="/"
+            sx={{
+              textDecoration: "none",
+              fontSize: "32px",
+              color: "#fff",
+              opacity: show ? 1 : 0,
+              transform: show ? "translateY(0)" : "translateX(-200px)",
+              transition: "opacity 4s ease, transform 2s ease",
+              transitionDelay: show ? "1.5s" : "0s",
+            }}
+          >
+            realestatecoach.ph
           </Typography>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" }, color: "#333" }}
+            sx={{ mr: 2, display: { md: "none" }, color: "#fff" }}
           >
             <MenuIcon />
           </IconButton>
@@ -126,6 +149,10 @@ export default function NavBar({ window }: NavBarProps) {
               display: { xs: "none", md: "flex" },
               gap: { lg: 1.5, md: 0.5 },
               alignItems: "center",
+              opacity: show ? 1 : 0,
+              transform: show ? "translateY(0)" : "translateX(200px)",
+              transition: "opacity 4s ease, transform 2s ease",
+              transitionDelay: show ? "1.5s" : "0s",
             }}
           >
             {navItems.map(({ name, href }) => (
@@ -135,10 +162,10 @@ export default function NavBar({ window }: NavBarProps) {
                 href={href}
                 sx={{
                   fontFamily: "Outfit",
-                  fontWeight: 500,
-                  color: "#333",
+                  fontWeight: 300,
+                  color: "#fff",
                   textTransform: "none",
-                  fontSize: "16px",
+                  fontSize: "22px",
                   pr: 5,
                   position: "relative",
                   "&:not(:last-child)::before": {
@@ -149,7 +176,8 @@ export default function NavBar({ window }: NavBarProps) {
                     right: 10,
                   },
                   "&:hover": {
-                    backgroundColor: "rgba(228, 44, 37, 0.04)",
+                    textDecoration: "underline",
+                    background: "transparent",
                   },
                 }}
               >

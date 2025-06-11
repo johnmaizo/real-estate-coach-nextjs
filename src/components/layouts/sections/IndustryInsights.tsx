@@ -66,7 +66,7 @@ export default function IndustryInsights() {
                 padding: 3,
                 height: "100%",
                 background: `url(${IndustryInsightsBGImage.src}) no-repeat center/cover`,
-                minHeight: { sm: "auto", md: "500px" },
+                minHeight: { sm: "auto", md: "580px" },
                 width: "100%",
                 display: "flex",
                 justifyContent: "start",
@@ -84,7 +84,7 @@ export default function IndustryInsights() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  maxWidth: "500px",
+                  maxWidth: "650px",
                 }}
               />
             </Box>
