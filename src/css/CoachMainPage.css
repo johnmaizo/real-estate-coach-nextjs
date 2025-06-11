@@ -1,0 +1,188 @@
+:root {
+  --scroll-snap-duration: 5000ms;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.app {
+  height: 100vh;
+}
+
+/* vv Custom Dot List vv */
+.custom-dot-list-style {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+.custom-dot-list-style li {
+  margin: 0 1px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.custom-dot-list-style li button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.custom-dot-list-style li.react-multi-carousel-dot--active button {
+  background: #ee3434;
+  width: 45px;
+  border-radius: 15px;
+  /* transform: scale(1.2); */
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.scroll-section {
+  flex: 0 0 100%;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(46, 59, 85, 0.5);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 59, 85, 0.7);
+}
+
+/* Scroll indicator dots */
+.scroll-indicator {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background-color: #f5b041;
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body,
+  html {
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .app {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .horizontal-scroll-container {
+    flex-direction: row;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .scroll-section {
+    flex: 0 0 100%;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+  }
+
+  .scroll-indicator {
+    flex-direction: row;
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+
+  .horizontal-scroll-container-scroll-active {
+    overflow-y: hidden !important;
+  }
+}

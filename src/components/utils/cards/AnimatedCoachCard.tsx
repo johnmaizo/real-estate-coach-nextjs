@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Box, Button, Fade } from "@mui/material";
+import React, {useState, useEffect} from "react";
+import {Box, Button, Fade} from "@mui/material";
 import Image from "next/image";
 import Icon from "@/assets/svg/ArrowFilledCircleIconWhite.svg";
 import Link from "next/link";
@@ -11,49 +11,49 @@ const Coaches = [
     id: 1,
     name: "Anthony Leuterio",
     imageURL: "/SirTon.png",
-    link: "/coach/Anthony_Leuterio",
+    link: "/coach/anthony_leuterio",
   },
   {
     id: 2,
     name: "Gilbert Monecillo ",
     imageURL: "/Gilbert_Monecillo.png",
-    link: "/coach/Gilbert_Monecillo",
+    link: "/coach/gilbert_monecillo",
   },
   {
     id: 3,
     name: "Azela Honor",
     imageURL: "/Azela_Honor.png",
-    link: "/coach/Azela_Honor",
+    link: "/coach/azela_honor",
   },
   {
     id: 4,
     name: "George Ryan",
     imageURL: "/George_Ryan.png",
-    link: "/coach/George_Ryan",
+    link: "/coach/george_ryan",
   },
   {
     id: 5,
     name: "Marita Gracia Bombeo Fancubit",
     imageURL: "/Marita_Gracia.png",
-    link: "/coach/Marita_Gracia",
+    link: "/coach/marita_gracia",
   },
   {
     id: 6,
     name: "Chris Malazarte ",
     imageURL: "/Chris_Malazarte.png",
-    link: "/coach/Chris_Malazarte",
+    link: "/coach/chris_malazarte",
   },
   {
     id: 7,
     name: "Angie Kay Godornes",
     imageURL: "/Angie_Kay_Godornes.png",
-    link: "/coach/Angie_Kay_Godornes",
+    link: "/coach/angie_kay_godornes",
   },
   {
     id: 8,
     name: "Ada Mae Roiles ",
     imageURL: "/Ada_Mae_Roiles.png",
-    link: "/coach/Ada_Mae_Roiles",
+    link: "/coach/ada_mae_roiles",
   },
 ];
 
@@ -80,20 +80,18 @@ export default function AnimatedCoachCard() {
     <Box
       sx={{
         py: 20,
-      }}
-    >
+      }}>
       {/* Main Card */}
       <Box
         sx={{
-          width: { sm: "auto", md: "450px" },
+          width: {sm: "auto", md: "450px"},
           height: "550px",
           backgroundColor: "white",
           borderRadius: "10px",
           position: "relative",
           zIndex: 12923,
-          boxShadow: { sm: "0", md: "20px 20px 0 0px #C5C5C5" },
-        }}
-      >
+          boxShadow: {sm: "0", md: "20px 20px 0 0px #C5C5C5"},
+        }}>
         <Fade in={fadeIn} timeout={300}>
           <Box>
             {/* Coach Image */}
@@ -122,7 +120,7 @@ export default function AnimatedCoachCard() {
               href={currentCoach.link}
               aria-label={`Go to Coach ${currentCoach.name}'s page`}
               sx={{
-                width: { xs: "200px", sm: "auto" },
+                width: {xs: "200px", sm: "auto"},
                 fontFamily: "Outfit",
                 textTransform: "none",
                 fontSize: "22px",
@@ -143,8 +141,7 @@ export default function AnimatedCoachCard() {
                   color: "#132D4C",
                   borderColor: "#132D4C",
                 },
-              }}
-            >
+              }}>
               Hire Me <Image src={Icon} alt="" aria-hidden draggable={false} />
             </Button>
           </Box>

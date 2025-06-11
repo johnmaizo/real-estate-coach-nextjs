@@ -23,9 +23,9 @@ export interface Coach {
   coachUsername: string;
   name: string;
   fullName: string;
-  title: string;
+  title?: string;
   description: string;
-  mainPageAward: string;
+  mainPageAward?: string;
   mainPageImageURLs: string[];
   awards: {imageURL: string; name: string}[];
 }

@@ -1,8 +1,6 @@
 import {notFound} from "next/navigation";
-import {Box, Button, Container, Typography} from "@mui/material";
-import Link from "next/link";
-import LaunchIcon from "@mui/icons-material/Launch";
 import {COACH_DATA} from "@/data/CoachData";
+import MainCoachPage from "@/components/layouts/MainCoachPage";
 
 export async function generateStaticParams() {
   return COACH_DATA.map((coach) => ({
@@ -24,6 +22,26 @@ export async function generateMetadata({
   return {
     title: `${coach.name} | Real EstateCoach`,
     description: coach.description,
+    alternates: {
+      canonical: `https://realestatecoach.ph/coach/${coach.coachUsername}`,
+      languages: {
+        "en-US": `https://realestatecoach.ph/coach/${coach.coachUsername}`,
+      },
+    },
+    openGraph: {
+      title: `${coach.name}`,
+      description: coach.description,
+      url: `https://realestatecoach.ph/coach/${coach.coachUsername}`,
+      images: [
+        {
+          url: coach.mainPageImageURLs[0],
+          width: 800,
+          height: 600,
+        },
+      ],
+      siteName: "Real EstateCoach",
+      type: "profile",
+    },
   };
 }
 
@@ -38,21 +56,8 @@ export default async function CoachPage({
   if (!coach) notFound();
 
   return (
-    <Box sx={{py: 5, minHeight: "100vh"}}>
-      <Container maxWidth="xl">
-        <Typography variant="h4" sx={{mb: 2}}>
-          Welcome to {coach.fullName}&apos;s Coaching Page
-        </Typography>
-        <Typography sx={{mb: 2}}>{coach.description}</Typography>
-        <Button
-          variant="contained"
-          LinkComponent={Link}
-          href="/"
-          sx={{mb: 2}}
-          endIcon={<LaunchIcon />}>
-          Go back to Home Page
-        </Button>
-      </Container>
-    </Box>
+    <>
+      <MainCoachPage data={coach} />
+    </>
   );
 }

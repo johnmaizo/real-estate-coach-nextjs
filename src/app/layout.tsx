@@ -12,7 +12,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Real EstateCoach",
   description:
-    "Real EstateCoach is a coaching platform for real estate agents.",
+    "Get access to top-notch coaching, training, and resources to grow your real estate business. Expert coaches provide personalized guidance, support, and accountability to help you reach your goals.",
 };
 
 export default function RootLayout({
