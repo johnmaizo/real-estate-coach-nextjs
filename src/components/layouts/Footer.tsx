@@ -57,7 +57,13 @@ export default function Footer() {
     <>
       <Box
         component={"footer"}
-        sx={{ backgroundColor: "#060606", padding: 2, color: "white" }}
+        sx={{
+          backgroundColor: "#060606",
+          padding: 2,
+          color: "white",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
         <Container maxWidth="xl">
           <Box sx={{}}>
@@ -215,15 +221,6 @@ export default function Footer() {
               ))}
             </Box>
 
-            <Divider
-              sx={{
-                height: "2px",
-                my: 5,
-                mt: { sm: 0, md: 10 },
-                backgroundColor: "#CACACA",
-              }}
-            />
-
             <Box
               sx={{
                 my: 3,
@@ -233,6 +230,8 @@ export default function Footer() {
                 justifyContent: "space-between",
                 alignItems: { xs: "flex-start", md: "center" },
                 gap: { xs: 3, md: 0 },
+                marginTop: "80px",
+                marginBottom: "30px",
               }}
             >
               <Typography>
